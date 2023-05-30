@@ -8,6 +8,6 @@ RUN python -m pip install --upgrade pip
 
 RUN pip install -r requirements.txt
 
-EXPOSE 6000
+EXPOSE 5000
 
 CMD ["tail", "-f", "/dev/null"]
