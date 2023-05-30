@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Twitter</title>
+</head>
+<body>
+    <h2>Add a Tweet:</h2>
+    <form method="POST" action="/">
+        <input type="hidden" name="tweet" value=0>
+        <input type="hidden" name="comment_id" value=0>
+        <input type="text" name="name_text" placeholder="Enter your name...">
+        <input type="text" name="comment_text" placeholder="Enter your tweet...">
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Tweets:</h2>
+    <ul>
+        {% for comment in comments %}
+        {% if comment[3] == 0 %}
+        <ul>
+            <li>
+                {{ comment[0] }}
+                -
+                {{ comment[1] }}
+                -
+                {{ comment[2] }}
+            </li>
+            {% for comment1 in comments %}
+            {% if comment1[5] == comment[0] %}
+            <ul>
+            <li>
+                {{ comment1[1] }}
+                -
+                {{ comment1[2] }}
+            </li>
+        </ul>
+        {% endif %}
+            
+        {% endfor %}
+        <form method="POST" action="/">
+            <input type="hidden" name="tweet" value=1>
+            <input type="text" name="comment_id" placeholder="Enter the number of the tweet...">
+            <input type="text" name="name_text" placeholder="Enter your name...">
+            <input type="text" name="comment_text" placeholder="Enter your comment...">
+            <button type="submit">Submit</button>
+        </form>
+        </ul>
+        
+        {% endif %}
+            
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
