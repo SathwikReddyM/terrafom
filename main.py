@@ -5,10 +5,10 @@ app = Flask(__name__)
 
 # Configure MySQL connection
 db = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='Test@123',
-    database='terraform'
+    host='comeon.cucrqjiimp6l.us-east-2.rds.amazonaws.com',
+    user='admin',
+    password='Test!098',
+    database='please'
 )
 cursor = db.cursor()
 
@@ -24,7 +24,7 @@ def index():
         
 
         insert_query = '''
-            INSERT INTO terraform.content (Author, content, tweet, timestamp, comment_id) 
+            INSERT INTO please.content (Author, content, tweet, timestamp, comment_id) 
             VALUES (%s, %s, %s, CURRENT_TIMESTAMP(), %s)
 
         '''
@@ -32,7 +32,7 @@ def index():
         db.commit()
 
     select_query = '''
-        SELECT ID, Author, content, Tweet,timestamp,comment_id from terraform.content
+        SELECT ID, Author, content, Tweet,timestamp,comment_id from please.content
     '''
     cursor.execute(select_query)
     comments = cursor.fetchall()
