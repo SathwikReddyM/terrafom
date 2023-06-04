@@ -2,32 +2,6 @@ from flask import Flask, render_template, request
 import mysql.connector
 
 app = Flask(__name__)
-"""
-# Configure MySQL connection
-db = mysql.connector.connect(
-    host='database-1.cucrqjiimp6l.us-east-2.rds.amazonaws.com',
-    user='admin',
-    password='Test!098',
-    database='terraform'
-)
-cursor = db.cursor()"""
-
-
-
-@app.route('/', methods=['GET'])
-def index():
-    return "Hello world! localhost"
-
-
-if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=5000)
-
-
-
-"""from flask import Flask, render_template, request
-import mysql.connector
-
-app = Flask(__name__)
 
 # Configure MySQL connection
 db = mysql.connector.connect(
@@ -66,4 +40,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run()"""
+    app.run(host="0.0.0.0",port=5000)
