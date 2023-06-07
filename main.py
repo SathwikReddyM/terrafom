@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from details.py import endpoint
+from details import endpoint
 import mysql.connector
 import os
 
