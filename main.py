@@ -10,8 +10,8 @@ db = mysql.connector.connect(
     #host = "comeon.cucrqjiimp6l.us-east-2.rds.amazonaws.com",
     host=endpoint[:-5],
     user='admin',
-    password='Test!098'
-    #,database='please'
+    password='Test!098',
+    database='please'
 )
 cursor = db.cursor()
 cursor.execute("CREATE TABLE `please`.`new_table` (`ID` INT NOT NULL AUTO_INCREMENT,`Author` VARCHAR(45) NOT NULL,`Content` VARCHAR(45) NOT NULL,`Tweet` INT NOT NULL,`Timestamp` VARCHAR(45) NOT NULL,`Comment_Id` INT NOT NULL,PRIMARY KEY (`ID`));")
