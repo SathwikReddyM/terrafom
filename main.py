@@ -11,7 +11,7 @@ db = mysql.connector.connect(
     host=endpoint[:-5],
     user='admin',
     password='Test!098',
-    database='please'
+    #database='please'
 )
 cursor = db.cursor()
 cursor.execute("CREATE DATABASE please;")
