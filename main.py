@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from details.py import endpoint
 import mysql.connector
 import os
 
@@ -6,8 +7,8 @@ app = Flask(__name__)
 
 # Configure MySQL connection
 db = mysql.connector.connect(
-    host = "comeon.cucrqjiimp6l.us-east-2.rds.amazonaws.com",
-    #host=os.environ.get("RDS_ENDPOINT"),
+    #host = "comeon.cucrqjiimp6l.us-east-2.rds.amazonaws.com",
+    host=endpoint,
     user='admin',
     password='Test!098'
     #,database='please'
