@@ -14,7 +14,7 @@ db = mysql.connector.connect(
     #database='please'
 )
 cursor = db.cursor()
-cursor.execute("CREATE DATABASE please;")
+cursor.execute("CREATE DATABASE IF NOT EXISTS please;")
 cursor.execute("CREATE TABLE `please`.`new_table` (`ID` INT NOT NULL AUTO_INCREMENT,`Author` VARCHAR(45) NOT NULL,`Content` VARCHAR(45) NOT NULL,`Tweet` INT NOT NULL,`Timestamp` VARCHAR(45) NOT NULL,`Comment_Id` INT NOT NULL,PRIMARY KEY (`ID`));")
 
 
