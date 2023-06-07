@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Configure MySQL connection
 db = mysql.connector.connect(
     #host = "comeon.cucrqjiimp6l.us-east-2.rds.amazonaws.com",
-    host=endpoint,
+    host=endpoint[:-5],
     user='admin',
     password='Test!098'
     #,database='please'
