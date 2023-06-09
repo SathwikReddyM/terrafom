@@ -40,6 +40,8 @@ cursor.execute("CREATE TABLE IF NOT EXISTS `please`.`content` (`ID` INT NOT NULL
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    logger.info('This is an info message.')
+    logger.error('An error occurred.')
     if request.method == 'POST':
         comment_text = request.form['comment_text']
         name_text = request.form['name_text']
