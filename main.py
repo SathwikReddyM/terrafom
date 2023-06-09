@@ -2,8 +2,27 @@ from flask import Flask, render_template, request
 from details import endpoint
 import mysql.connector
 import os
+import logging
+
 
 app = Flask(__name__)
+# Create a logger
+logger = logging.getLogger(__name__)
+
+# Set the log level (optional)
+logger.setLevel(logging.DEBUG)
+
+# Create a file handler
+file_handler = logging.FileHandler('app.log')
+
+# Create a formatter
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# Set the formatter on the handler
+file_handler.setFormatter(formatter)
+
+# Add the handler to the logger
+logger.addHandler(file_handler)
 
 # Configure MySQL connection
 db = mysql.connector.connect(
